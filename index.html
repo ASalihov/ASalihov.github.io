@@ -2,7 +2,7 @@
 <!-- saved from url=(0087)https://login.microsoftonline.com/static/tenant/templates/AzureBlue/selfAsserted.cshtml -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>User details 3</title>
+    <title>User details 4</title>
 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -127,7 +127,7 @@
 			/*position: relative;
 			top: -60px;
 			right: 76px;*/
-			translate: 0 -130px
+			/*translate: 0 -130px*/
 		}
 		
 		.changeClaims{
@@ -148,6 +148,13 @@
 			margin-top:30px*/
 		}
 	</style>
+	<script>"use strict"; $(document).ready(function () {
+		console.log("js started!");
+		if(document.getElementById("emailVerificationControl_but_change_claims").style.display !== 'none'){
+			document.getElementById("continue").style.translate = '0 -70px';
+			document.getElementById("emailVerificationControl_but_change_claims").style.translate = '0 70px';
+		}
+	</script>
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
