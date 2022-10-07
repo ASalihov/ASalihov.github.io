@@ -150,9 +150,11 @@
 	</style>
 	<script>"use strict"; $(document).ready(function () {
 		console.log("js started!");
+		console.log(document.getElementById("emailVerificationControl_but_change_claims"));
+		console.log(document.getElementById("continue"));
 		if(document.getElementById("emailVerificationControl_but_change_claims").style.display !== 'none'){
-			document.getElementById("continue").style.translate = '0 -70px';
-			document.getElementById("emailVerificationControl_but_change_claims").style.translate = '0 70px';
+		   document.getElementById("continue").style.translate = '0 -70px';
+		   document.getElementById("emailVerificationControl_but_change_claims").style.translate = '0 70px';
 		}
 		});
 	</script>
