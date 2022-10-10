@@ -2,7 +2,7 @@
 <!-- saved from url=(0087)https://login.microsoftonline.com/static/tenant/templates/AzureBlue/selfAsserted.cshtml -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>User details 6</title>
+    <title>User details 7</title>
 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -149,11 +149,15 @@
 		<!-- } -->
 		
 		#attributeVerification:has(.error) .sendCode{
-			background-color: #e81123
+			background-color: #e81123;
 		}
 		
 		#attributeVerification:has(button.changeClaims[aria-hidden="false"]) #continue{
-			translate: 0 -130px
+			translate: 0 -130px;
+		}
+		
+		.buttons:has(button.changeClaims[aria-hidden="false"]) .changeClaims{
+			translate: 0 130px;
 		}
 	</style>
 	<script>"use strict"; $(document).ready(function () {
