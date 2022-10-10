@@ -2,7 +2,7 @@
 <!-- saved from url=(0087)https://login.microsoftonline.com/static/tenant/templates/AzureBlue/selfAsserted.cshtml -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     
-    <title>1</title>
+    <title>2</title>
 
     
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -124,30 +124,10 @@
 		.col-lg-6{position:relative;}
 		.heading{display:none}
 		#continue{background-color: green;}
-		/*<!-- #continue{ -->
-			<!-- /*position: relative; -->
-			<!-- top: -60px; -->
-			<!-- right: 76px;*/ -->
-			<!-- /*translate: 0 -130px*/ -->
-		<!-- } -->
 		
-		<!-- .changeClaims{ -->
-			<!-- /*border:none; -->
-			<!-- color:#fff; -->
-			<!-- background-color:#296ec6; -->
-			<!-- width:60%; -->
-			<!-- height:50px; -->
-			<!-- border-radius:.5rem -->
-			<!-- display: inline; -->
-			<!-- position: absolute; -->
-			<!-- top: 60px; -->
-			<!-- right: 76px;*/ -->
-			
-		<!-- #attributeVerification .buttons{ -->
-			<!-- /*position: relative; -->
-			<!-- min-height: 60px; -->
-			<!-- margin-top:30px*/ -->
-		<!-- } -->*/
+		#attributeVerification:has(button.changeClaims[aria-hidden="false"]) {
+			background-color: black;
+		}
 		
 		#attributeVerification:has(.error) .sendCode{
 			background-color: #e81123;
