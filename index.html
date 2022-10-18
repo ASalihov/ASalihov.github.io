@@ -156,6 +156,7 @@
                 var readyToRedirect = false;
                 $element.confirm = function () {
                     readyToRedirect = true;
+					return $i2e.redirectToServer("confirmed");
                 };
 
                 var failedToRedirect = false;
