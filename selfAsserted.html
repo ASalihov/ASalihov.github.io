@@ -123,120 +123,14 @@
 		.col-lg-6{position:relative;}
 		.heading{display:none}
 		
-		/* #attributeVerification:has(button.changeClaims[aria-hidden="false"]) #continue{
-			translate: 0 -130px;
-		}
-		
 		#attributeVerification:has(button.changeClaims[aria-hidden="false"]) #continue{
 			translate: 0 -130px;
 		}
 		
 		.buttons:has(button.changeClaims[aria-hidden="false"]) .changeClaims{
 			translate: 0 100px;
-		} */
+		}
 	</style>
-	
-	<script>
-            // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
-            var applyB2CAddOns = function () {
-                return;
-                console.log('applyB2CAddOns start');
-                var verifyCodeBtn = document.querySelector('.verifyCode');
-                var sendNewCodeBtn = document.querySelector('.sendNewCode');
-                var sendCodeBtn = document.querySelector('.sendCode');
-                var changeEmailBtn = document.querySelector('.changeClaims');
-                var cancelBtn = document.querySelector('#cancel');
-                var continueBtn = document.querySelector('#continue');
-
-                // Make sure always remove the continue button if it exists.
-                if (sendCodeBtn && continueBtn) {
-                    console.log('hide continueBtn');
-                    continueBtn.style.display = 'none';
-                }
-
-                var readyToRedirect = false;
-                $element.confirm = function () {
-                    readyToRedirect = true;
-                };
-
-                var failedToRedirect = false;
-
-                // Overriding following two methods so that we can detect the failure calling these two methods.
-                $element.onError = function (code, message, isSendingQuietly) {
-                    if (isSendingQuietly) {
-                        $diags.sendQuietDiagnostics(code, message);
-                    } else {
-                        $diags.sendDiagnostics(code, message);
-                    }
-                    failedToRedirect = true;
-                    return false;
-                };
-
-                // Sets error message and shows it to the user.
-                $element.setAndShowErrorMessage = function (id, msg) {
-                    var $id = $('#' + id);
-
-                    if (msg) {
-                        $id.text(msg);
-                    }
-
-                    // Add the aria attributes and tabindex allowing the message to receive focus
-                    $id.attr({ role: 'alert', 'aria-live': 'polite', 'aria-hidden': 'false', tabindex: '1' }).css('display', 'block');
-
-                    failedToRedirect = true;
-                };
-
-                if (verifyCodeBtn) {
-                    // Adding auto submission once found it is a email verification page.
-                    verifyCodeBtn.onclick = function () {
-                        failedToRedirect = false;
-                        readyToRedirect = false;
-                        continueBtn.style.display = 'inline';
-
-                        // Continue the page once email is validated.
-                        var verifyInterval = setInterval(function () {
-                            if ($element.verificationInfo.emailVerificationControl) {
-                                clearInterval(verifyInterval);
-                                $element.verify();
-                                cancelBtn.style.display = 'none';
-                                changeEmailBtn.style.display = 'none';
-                                continueBtn.style.display = 'none';
-                            }
-                        }, 50);
-
-                        // Confirm the page for redirect once server side validate is passed.
-                        var confirmInterval = setInterval(function () {
-                            if (readyToRedirect) {
-                                continueBtn.style.display = 'none';
-                                clearInterval(confirmInterval);
-                                clearInterval(failedInterval);
-                                $i2e.redirectToServer('confirmed');
-                            }
-                        }, 50);
-
-                        // Confirm the page for redirect once server side validate is passed.
-                        var failedInterval = setInterval(function () {
-                            if (failedToRedirect) {
-                                clearInterval(failedInterval);
-                                cancelBtn.style.display = 'inline-block';
-                                changeEmailBtn.style.display = 'inline-block';
-                            }
-                        }, 50);
-                    };
-                }
-            };
-
-            (function onPageReady() {
-                var intervalHandle = setInterval(function () {
-                    if (window.pageReady) {
-                        console.log('pageReady');
-                        applyB2CAddOns();
-                        clearInterval(intervalHandle);
-                    }
-                }, 50);
-            })();
-        </script>
-		
 </head>
 <body>
     <div id="background_branding_container" data-tenant-branding-background-color="true">
