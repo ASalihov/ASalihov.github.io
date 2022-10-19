@@ -974,7 +974,7 @@
                 if (verifyCodeBtn) {
                     // Adding auto submission once found it is a email verification page.
                     verifyCodeBtn.onclick = function () {
-						if(failedToRedirect){
+						if(readyToRedirect){
 							continueBtn.style.display = 'inline';
 						}
                         failedToRedirect = false;
