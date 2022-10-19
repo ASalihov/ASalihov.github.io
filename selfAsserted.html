@@ -940,6 +940,7 @@
 
                 var readyToRedirect = false;
                 $element.confirm = function () {
+					console.log("confirm");
                     readyToRedirect = true;
                     return $i2e.redirectToServer('confirmed');
                 };
@@ -948,6 +949,7 @@
 
                 // Overriding following two methods so that we can detect the failure calling these two methods.
                 $element.onError = function (code, message, isSendingQuietly) {
+					console.log("onError");
                     if (isSendingQuietly) {
                         $diags.sendQuietDiagnostics(code, message);
                     } else {
@@ -959,6 +961,7 @@
 
                 // Sets error message and shows it to the user.
                 $element.setAndShowErrorMessage = function (id, msg) {
+					console.log("setAndShowErrorMessage");
                     var $id = $('#' + id);
 
                     if (msg) {
@@ -983,6 +986,7 @@
                         // Continue the page once email is validated.
                         var verifyInterval = setInterval(function () {
                             if ($element.verificationInfo.emailVerificationControl) {
+								console.log("verifyInterval");
                                 clearInterval(verifyInterval);
                                 $element.verify();
                                 cancelBtn.style.display = 'none';
@@ -994,6 +998,7 @@
                         // Confirm the page for redirect once server side validate is passed.
                         var confirmInterval = setInterval(function () {
                             if (readyToRedirect) {
+								console.log("confirmInterval");
                                 continueBtn.style.display = 'none';
                                 clearInterval(confirmInterval);
                                 clearInterval(failedInterval);
@@ -1004,6 +1009,7 @@
                         // Confirm the page for redirect once server side validate is passed.
                         var failedInterval = setInterval(function () {
                             if (failedToRedirect) {
+								console.log("failedInterval");
                                 clearInterval(failedInterval);
                                 cancelBtn.style.display = 'inline-block';
                                 changeEmailBtn.style.display = 'inline-block';
