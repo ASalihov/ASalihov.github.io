@@ -981,6 +981,7 @@
 							continueBtn.style.display = 'inline';
 						}
 						continueBtn.style.display = 'none';
+						changeEmailBtn.style.display = 'none';
                         failedToRedirect = false;
                         readyToRedirect = false;
 
@@ -991,8 +992,6 @@
                                 clearInterval(verifyInterval);
                                 $element.verify();
                                 cancelBtn.style.display = 'none';
-                                changeEmailBtn.style.display = 'none';
-                                continueBtn.style.display = 'none';
                             }
                         }, 50);
 
