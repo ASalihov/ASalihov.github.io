@@ -19,7 +19,7 @@ $(function () {
             return $i2e.redirectToServer('confirmed');
         };
 
-        const failedToRedirect = false;
+        var failedToRedirect = false;
 
         // Overriding following two methods so that we can detect the failure calling these two methods.
         $element.onError = function (code, message, isSendingQuietly) {
