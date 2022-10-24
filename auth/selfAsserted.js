@@ -19,7 +19,7 @@ $(function () {
             return $i2e.redirectToServer('confirmed');
         };
 
-        let failedToRedirect = false;
+        // let failedToRedirect = false;
 
         // Overriding following two methods so that we can detect the failure calling these two methods.
         $element.onError = function (code, message, isSendingQuietly) {
@@ -28,7 +28,7 @@ $(function () {
             } else {
                 $diags.sendDiagnostics(code, message);
             }
-            failedToRedirect = true;
+            // failedToRedirect = true;
             return false;
         };
 
@@ -49,7 +49,7 @@ $(function () {
         if (verifyCodeBtn) {
             // Adding auto submission once found it is a email verification page.
             verifyCodeBtn.onclick = function () {
-                failedToRedirect = false;
+                // failedToRedirect = false;
                 // readyToRedirect = false;
                 continueBtn.style.display = 'none';
 
@@ -73,13 +73,13 @@ $(function () {
                 // }, 50);
 
                 // Confirm the page for redirect once server side validate is passed.
-                const failedInterval = setInterval(function () {
-                    if (failedToRedirect) {
-                        clearInterval(failedInterval);
-                        cancelBtn.style.display = 'inline-block';
-                        changeEmailBtn.style.display = 'inline-block';
-                    }
-                }, 50);
+                // const failedInterval = setInterval(function () {
+                    // if (failedToRedirect) {
+                        // clearInterval(failedInterval);
+                        // cancelBtn.style.display = 'inline-block';
+                        // changeEmailBtn.style.display = 'inline-block';
+                    // }
+                // }, 50);
             };
         }
     };
