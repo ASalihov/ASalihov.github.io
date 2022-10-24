@@ -1,6 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
+		console.log("go");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
