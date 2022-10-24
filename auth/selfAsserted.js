@@ -1,7 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("go");
+		console.log("jo");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -12,10 +12,6 @@ $(function () {
         if (sendCodeBtn && continueBtn) {
             continueBtn.style.display = 'none';
         }
-
-        $element.confirm = function () {
-            return $i2e.redirectToServer('confirmed');
-        };
 
         // Sets error message and shows it to the user.
         $element.setAndShowErrorMessage = function (id, msg) {
