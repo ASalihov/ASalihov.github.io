@@ -1,6 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
+		console.log("!!! 1 !!!");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -48,13 +49,10 @@ $(function () {
         if (verifyCodeBtn) {
             // Adding auto submission once found it is a email verification page.
             verifyCodeBtn.onclick = function () {
-                if (readyToRedirect) {
-                    continueBtn.style.display = 'inline';
-                }
-                continueBtn.style.display = 'none';
-                changeEmailBtn.style.display = 'none';
+                
                 failedToRedirect = false;
                 readyToRedirect = false;
+				continueBtn.style.display = 'inline';
 
                 // Continue the page once email is validated.
                 const verifyInterval = setInterval(function () {
@@ -62,6 +60,8 @@ $(function () {
                         clearInterval(verifyInterval);
                         $element.verify();
                         cancelBtn.style.display = 'none';
+						changeEmailBtn.style.display = 'none';
+						continueBtn.style.display = 'none';
                     }
                 }, 50);
 
