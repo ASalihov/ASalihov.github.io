@@ -1,12 +1,12 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("!! 1 !!");
-        var verifyCodeBtn = document.querySelector('.verifyCode');
-        var sendCodeBtn = document.querySelector('.sendCode');
-        var changeEmailBtn = document.querySelector('.changeClaims');
-        var cancelBtn = document.querySelector('#cancel');
-        var continueBtn = document.querySelector('#continue');
+		console.log("!! 2 !!");
+        const verifyCodeBtn = document.querySelector('.verifyCode');
+        const sendCodeBtn = document.querySelector('.sendCode');
+        const changeEmailBtn = document.querySelector('.changeClaims');
+        const cancelBtn = document.querySelector('#cancel');
+        const continueBtn = document.querySelector('#continue');
 
         // Make sure always remove the continue button if it exists and send verification code button displayed.
         if (sendCodeBtn && continueBtn) {
