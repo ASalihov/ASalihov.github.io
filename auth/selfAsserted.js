@@ -1,7 +1,6 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("!!! 10 !!!");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -17,16 +16,6 @@ $(function () {
             return $i2e.redirectToServer('confirmed');
         };
 
-        // Overriding following two methods so that we can detect the failure calling these two methods.
-        $element.onError = function (code, message, isSendingQuietly) {
-            if (isSendingQuietly) {
-                $diags.sendQuietDiagnostics(code, message);
-            } else {
-                $diags.sendDiagnostics(code, message);
-            }
-            return false;
-        };
-
         // Sets error message and shows it to the user.
         $element.setAndShowErrorMessage = function (id, msg) {
             const $id = $('#' + id);
@@ -37,8 +26,6 @@ $(function () {
 
             // Add the aria attributes and tabindex allowing the message to receive focus
             $id.attr({ role: 'alert', 'aria-live': 'polite', 'aria-hidden': 'false', tabindex: '1' }).css('display', 'block');
-
-            failedToRedirect = true;
         };
 
         if (verifyCodeBtn) {
