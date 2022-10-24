@@ -1,7 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("!!! 2 !!!");
+		console.log("!!! 3 !!!");
         var verifyCodeBtn = document.querySelector('.verifyCode');
         var sendCodeBtn = document.querySelector('.sendCode');
         var changeEmailBtn = document.querySelector('.changeClaims');
@@ -51,7 +51,7 @@ $(function () {
             verifyCodeBtn.onclick = function () {
                 failedToRedirect = false;
                 readyToRedirect = false;
-				continueBtn.style.display = 'inline';
+				continueBtn.style.display = 'none';
 
                 // Continue the page once email is validated.
                 const verifyInterval = setInterval(function () {
@@ -70,7 +70,6 @@ $(function () {
                         continueBtn.style.display = 'none';
                         clearInterval(confirmInterval);
                         clearInterval(failedInterval);
-                        $i2e.redirectToServer('confirmed');
                     }
                 }, 50);
 
