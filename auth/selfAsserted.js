@@ -13,17 +13,17 @@ $(function () {
             continueBtn.style.display = 'none';
         }
 
-        // Sets error message and shows it to the user.
-        $element.setAndShowErrorMessage = function (id, msg) {
-            const $id = $('#' + id);
+        // // Sets error message and shows it to the user.
+        // $element.setAndShowErrorMessage = function (id, msg) {
+            // const $id = $('#' + id);
 
-            if (msg) {
-                $id.text(msg);
-            }
+            // if (msg) {
+                // $id.text(msg);
+            // }
 
-            // Add the aria attributes and tabindex allowing the message to receive focus
-            $id.attr({ role: 'alert', 'aria-live': 'polite', 'aria-hidden': 'false', tabindex: '1' }).css('display', 'block');
-        };
+            // // Add the aria attributes and tabindex allowing the message to receive focus
+            // $id.attr({ role: 'alert', 'aria-live': 'polite', 'aria-hidden': 'false', tabindex: '1' }).css('display', 'block');
+        // };
 
         if (verifyCodeBtn) {
             // Adding auto submission once found it is a email verification page.
