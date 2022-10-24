@@ -1,7 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("jo");
+		console.log("ko");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -32,7 +32,10 @@ $(function () {
 
                 // Continue the page once email is validated.
                 const verifyInterval = setInterval(function () {
+					
+					console.log("before if - " + $element.verificationInfo.emailVerificationControl);
                     if ($element.verificationInfo.emailVerificationControl) {
+						console.log("AFTER if - " + $element.verificationInfo.emailVerificationControl);
                         clearInterval(verifyInterval);
                         $element.verify();
                         cancelBtn.style.display = 'none';
