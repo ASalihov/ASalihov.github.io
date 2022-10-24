@@ -1,7 +1,7 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("!! 2 !!");
+		console.log("!! 3 !!");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -55,9 +55,7 @@ $(function () {
 
                 // Continue the page once email is validated.
                 const verifyInterval = setInterval(function () {
-					console.log("verifyInterval - " + $element.verificationInfo.emailVerificationControl);
                     if ($element.verificationInfo.emailVerificationControl) {
-						console.log("verifyInterval - " + $element.verificationInfo.emailVerificationControl);
                         clearInterval(verifyInterval);
                         $element.verify();
                         cancelBtn.style.display = 'none';
@@ -67,9 +65,7 @@ $(function () {
 
                 // Confirm the page for redirect once server side validate is passed.
                 const confirmInterval = setInterval(function () {
-					console.log("confirmInterval - " + readyToRedirect);
                     if (readyToRedirect) {
-						console.log("confirmInterval - " + readyToRedirect);
                         continueBtn.style.display = 'none';
                         clearInterval(confirmInterval);
                         clearInterval(failedInterval);
@@ -78,9 +74,7 @@ $(function () {
 
                 // Confirm the page for redirect once server side validate is passed.
                 const failedInterval = setInterval(function () {
-					console.log("failedInterval - " + failedToRedirect);
                     if (failedToRedirect) {
-						console.log("failedInterval - " + failedToRedirect);
                         clearInterval(failedInterval);
                         cancelBtn.style.display = 'inline-block';
                         changeEmailBtn.style.display = 'inline-block';
