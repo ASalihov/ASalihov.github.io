@@ -1,7 +1,6 @@
 $(function () {
     // https://github.com/stevenxzhou-zz/B2C-Samples/blob/master/Email-Verification-Automatic-Redirect.js
     const applyB2CAddOns = function () {
-		console.log("!! 3 !!");
         const verifyCodeBtn = document.querySelector('.verifyCode');
         const sendCodeBtn = document.querySelector('.sendCode');
         const changeEmailBtn = document.querySelector('.changeClaims');
@@ -13,13 +12,13 @@ $(function () {
             continueBtn.style.display = 'none';
         }
 
-        var readyToRedirect = false;
+        // let readyToRedirect = false;
         $element.confirm = function () {
-            readyToRedirect = true;
+            // readyToRedirect = true;
             return $i2e.redirectToServer('confirmed');
         };
 
-        var failedToRedirect = false;
+        let failedToRedirect = false;
 
         // Overriding following two methods so that we can detect the failure calling these two methods.
         $element.onError = function (code, message, isSendingQuietly) {
@@ -34,7 +33,7 @@ $(function () {
 
         // Sets error message and shows it to the user.
         $element.setAndShowErrorMessage = function (id, msg) {
-            let $id = $('#' + id);
+            const $id = $('#' + id);
 
             if (msg) {
                 $id.text(msg);
@@ -50,8 +49,8 @@ $(function () {
             // Adding auto submission once found it is a email verification page.
             verifyCodeBtn.onclick = function () {
                 failedToRedirect = false;
-                readyToRedirect = false;
-				continueBtn.style.display = 'none';
+                // readyToRedirect = false;
+                continueBtn.style.display = 'none';
 
                 // Continue the page once email is validated.
                 const verifyInterval = setInterval(function () {
@@ -59,18 +58,18 @@ $(function () {
                         clearInterval(verifyInterval);
                         $element.verify();
                         cancelBtn.style.display = 'none';
-						changeEmailBtn.style.display = 'none';
+                        changeEmailBtn.style.display = 'none';
                     }
                 }, 50);
 
                 // Confirm the page for redirect once server side validate is passed.
-                const confirmInterval = setInterval(function () {
-                    if (readyToRedirect) {
-                        continueBtn.style.display = 'none';
-                        clearInterval(confirmInterval);
-                        clearInterval(failedInterval);
-                    }
-                }, 50);
+                // const confirmInterval = setInterval(function () {
+                //     if (readyToRedirect) {
+                //         continueBtn.style.display = 'none';
+                //         clearInterval(confirmInterval);
+                //         clearInterval(failedInterval);
+                //     }
+                // }, 50);
 
                 // Confirm the page for redirect once server side validate is passed.
                 const failedInterval = setInterval(function () {
